@@ -1,2 +1,6 @@
 # Game_high_way_hell
-This is an game made in C for my Imperative Programming class
+Atualizar o Enredo do jogo
+
+# Divisão de equipe
+Atualizar o que cada um vai fazer
+
