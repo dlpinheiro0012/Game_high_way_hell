@@ -1,16 +1,23 @@
 #include "raylib.h"
+#include "load.h"
+#include "menu_inicial.h"
+#include "creditos.h"
 
 int main(void) {
-    InitWindow(800, 600, "Meu Jogo no GitHub");
+    const int largura_tela = 1920;
+    const int altura_tela = 1080;
+    
+    InitWindow(largura_tela, altura_tela, "Highway to Hell");
     SetTargetFPS(60);
+    carregar_imagens();
 
-    while (!WindowShouldClose()) {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("Este projeto veio do GitHub!", 170, 280, 20, LIGHTGRAY);
-        EndDrawing();
+    while (!WindowShouldClose())
+    {
+        //init_menu();
+        init_creditos();
     }
 
     CloseWindow();
+
     return 0;
 }
