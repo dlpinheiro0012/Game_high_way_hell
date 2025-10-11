@@ -1,25 +1,43 @@
 {
+    // Versão do esquema de tarefas do VS Code, sempre "2.0.0".
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Game (Windows)",
+            // O nome que aparece nos menus do VS Code para esta tarefa.
+            "label": "Build Project",
+
+            // O tipo de tarefa. "shell" significa que o comando será executado no terminal padrão do sistema.
             "type": "shell",
-            "command": "gcc",
-            "args": [
-                "${workspaceFolder}/src/*.c",
-                "-o",
-                "${workspaceFolder}/game.exe",
-                "-I${workspaceFolder}/raylib/include",
-                "-L${workspaceFolder}/raylib/lib",
-                "-lraylib",
-                "-lopengl32",
-                "-lgdi32",
-                "-lwinmm"
-            ],
+
+            // Agrupa esta tarefa como uma tarefa de "build" (compilação).
             "group": {
+                // "kind": "build" permite que você a encontre usando "Run Build Task...".
                 "kind": "build",
+                // "isDefault": true faz com que esta seja a tarefa padrão executada pelo atalho Ctrl+Shift+B.
                 "isDefault": true
             },
+
+            // --- SEÇÃO ESPECÍFICA PARA WINDOWS ---
+            // O VS Code só executará este bloco se estiver no Windows.
+            "windows": {
+                // O comando completo a ser executado no shell (PowerShell).
+                // Usamos ";" para rodar um comando após o outro.
+                "command": "mkdir build -ErrorAction SilentlyContinue; gcc -o build/jogo.exe src/*.c -Iraylib/include -Lraylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm -static",
+                // Deixamos os argumentos vazios porque já colocamos tudo na string de comando.
+                "args": []
+            },
+
+            // --- SEÇÃO ESPECÍFICA PARA LINUX ---
+            // O VS Code só executará este bloco se estiver no Linux.
+            "linux": {
+                // O comando completo a ser executado no shell (bash).
+                // Usamos "&&" para rodar o segundo comando apenas se o primeiro for bem-sucedido.
+                "command": "mkdir -p build && gcc -o build/jogo src/*.c -Iraylib/include -Lraylib/lib -lraylib -lGL -lm -lpthread -ldl -lrt -lX11",
+                // Deixamos os argumentos vazios porque já colocamos tudo na string de comando.
+                "args": []
+            },
+            
+            // Ajuda o VS Code a entender as mensagens de erro do compilador GCC e destacá-las no código.
             "problemMatcher": [
                 "$gcc"
             ]
