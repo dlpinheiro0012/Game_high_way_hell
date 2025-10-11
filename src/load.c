@@ -2,7 +2,7 @@
 #include "load.h"
 #include <stdio.h>
 
-void carregar_imagens(){
+void carregar_assets(){
     Image icon = LoadImage("assets/icon.png");
     SetWindowIcon(icon);
 }
