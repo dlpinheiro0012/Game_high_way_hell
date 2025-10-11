@@ -8,4 +8,4 @@ Atualizar o que cada um vai fazer
 Apertar "CTRL + SHIFT + B"
 
 # Run no jogo
-Digitar .\build\jogo.exe ou abrir diretamente o executável
+Digitar ".\build\jogo.exe" ou abrir diretamente o executável
