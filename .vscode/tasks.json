@@ -2,24 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Project",
+            "label": "Build Project (Manual)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "windows": {
-                // Comando principal a ser executado.
                 "command": "gcc",
-                
-                // Cada argumento é passado como um item separado em uma lista.
-                // Esta forma é menos propensa a erros de aspas ou interpretação do shell.
+                // AQUI ESTÁ A MUDANÇA CRUCIAL
+                // Removemos "src/*.c" e colocamos o nome de cada arquivo fonte.
                 "args": [
                     "-o",
                     "build/jogo.exe",
-                    // A expansão do curinga ainda é responsabilidade do shell,
-                    // mas passar como um argumento separado costuma ser mais confiável.
-                    "src/*.c",
+                    "src/main.c",
+                    "src/creditos.c",
+                    "src/load.c",
+                    "src/menu_inicial.c",   // <-- Listamos o arquivo manualmente
+                    // Se você adicionar mais arquivos, adicione-os aqui. Ex: "src/player.c", "src/menu.c",
                     "-Iraylib/include",
                     "-Lraylib/lib",
                     "-lraylib",
@@ -28,20 +28,16 @@
                     "-lwinmm",
                     "-static"
                 ],
-                // Opções para controlar como o comando é executado.
                 "options": {
-                    // Especifica o diretório de trabalho atual.
-                    // "${workspaceFolder}" garante que os caminhos relativos (como src/*.c) funcionem.
                     "cwd": "${workspaceFolder}"
                 }
             },
             "linux": {
-                // A versão para Linux também é mais robusta desta forma.
                 "command": "gcc",
                 "args": [
                     "-o",
                     "build/jogo",
-                    "src/*.c",
+                    "src/main.c",   // <-- Listamos o arquivo manualmente
                     "-Iraylib/include",
                     "-Lraylib/lib",
                     "-lraylib",
