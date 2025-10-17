@@ -2,11 +2,6 @@
 #define MENU_H
 #include "raylib.h"
 
-typedef enum {
-    TELA_MENU,
-    TELA_CREDITOS
-} TelaAtual;
+int init_menu(const int largura_tela, const int altura_tela);
 
-// Função para desenhar o menu e retornar a próxima tela
-TelaAtual AtualizarMenu(void);
 #endif
