@@ -21,7 +21,7 @@ void init_creditos(const int largura_tela, const int altura_tela) {
 
         EndDrawing();
         // Se o jogador pressionar ESC → retorna ao menu
-        if (IsKeyPressed(KEY_ESCAPE)) {
+        if (IsKeyPressed(KEY_BACKSPACE)) {
             break;
         }
     }

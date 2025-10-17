@@ -18,7 +18,7 @@
                     "src/main.c",
                     "src/creditos.c",
                     "src/load.c",
-                    "src/menu_inicial.c",   // <-- Listamos o arquivo manualmente
+                    "src/menu.c",   // <-- Listamos o arquivo manualmente
                     // Se você adicionar mais arquivos, adicione-os aqui. Ex: "src/player.c", "src/menu.c",
                     "-Iraylib/include",
                     "-Lraylib/lib",
