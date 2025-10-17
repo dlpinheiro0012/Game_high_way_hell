@@ -1,6 +1,6 @@
 #include "raylib.h"
 #include "load.h" //PARA FAZER LOAD DE ASSETS: USAR carregar_assets();
-#include "menu_inicial.h" //PARA INICIAR MENU: USAR init_menu();
+#include "menu.h" //PARA INICIAR MENU: USAR init_menu();
 #include "creditos.h" //PARA INICIAR CRÉDITOS: USAR init_creditos();
 
 int main(void) {
