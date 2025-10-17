@@ -4,6 +4,7 @@
 #include "creditos.h" //PARA INICIAR CRÉDITOS: USAR init_creditos();
 
 int main(void) {
+    int volta_menu = 0;
     const int largura_tela = 1920;
     const int altura_tela = 1080;
     
@@ -13,8 +14,12 @@ int main(void) {
 
     while (!WindowShouldClose())
     {
-        init_menu();
-        //init_creditos();
+        if(IsKeyDown(KEY_BACKSPACE)) volta_menu = 1;
+        
+        if(volta_menu == 0) init_menu();
+        else if(volta_menu == 1)init_creditos(largura_tela, altura_tela);
+        
+        if(IsKeyDown(KEY_ENTER)) volta_menu = 0;
     }
 
     CloseWindow();
