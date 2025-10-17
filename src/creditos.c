@@ -2,16 +2,15 @@
 #include "raylib.h"
 #include "creditos.h"
 
-void init_creditos( const int largura_tela, const int altura_tela){
-        
-    SetTargetFPS(60);             
+void init_creditos(const int largura_tela, const int altura_tela) {
+    SetTargetFPS(60);
 
-    while (!WindowShouldClose())
-    {        
+    while (!WindowShouldClose()) {
         BeginDrawing();
 
             ClearBackground(BLACK);
-            
+            // Créditos
+            DrawText("Press ESC to menu", 20, 20, 30, GRAY);
             DrawText("CREDITOS", largura_tela/2.95, altura_tela/7, 120, RED);
             DrawText("Equipe :", largura_tela/6, altura_tela/3, 55, RED);
             DrawText("Arthur Moura Barbosa Vieira <ambv>", largura_tela/3.5, altura_tela/3, 55, WHITE);
@@ -21,6 +20,9 @@ void init_creditos( const int largura_tela, const int altura_tela){
             DrawText("Matheus Silva Vasconcelos <msv5>", largura_tela/3.5, altura_tela/1.98, 55, WHITE);
 
         EndDrawing();
-
+        // Se o jogador pressionar ESC → retorna ao menu
+        if (IsKeyPressed(KEY_ESCAPE)) {
+            break;
+        }
     }
 }
