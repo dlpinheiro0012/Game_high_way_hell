@@ -1,26 +1,31 @@
+#include "raylib.h"
 #include "menu.h"
 
-TelaAtual AtualizarMenu(void) {
-    BeginDrawing();
-        ClearBackground(BLACK);
+int init_menu(const int largura_tela, const int altura_tela) {
+    while (!WindowShouldClose()) {
+        BeginDrawing();
 
-        // Gerando o texto de título
-        const char *titulo = "Prepare-se para jogar!";
-        int fontSizeTitulo = 40;
-        int textWidthTitulo = MeasureText(titulo, fontSizeTitulo);
-        DrawText(titulo, (GetScreenWidth() - textWidthTitulo)/2, 150, fontSizeTitulo, RAYWHITE);
+            ClearBackground(BLACK);
 
-        // Gerando as opções de lógica (agr apenas pra créditos)
-        const char *op1 = "Press SPACE to Play";
-        const char *op2 = "Press C to Credits";
-        int fontSizeOp = 20;
+            const char *titulo = "Prepare-se para jogar!";
+            int tamanhoTitulo = 50;
+            int larguraTitulo = MeasureText(titulo, tamanhoTitulo);
+            DrawText(titulo, (largura_tela - larguraTitulo)/2, altura_tela/4, tamanhoTitulo, RAYWHITE);
 
-        DrawText(op1, (GetScreenWidth() - MeasureText(op1, fontSizeOp))/2, 250, fontSizeOp, GRAY);
-        DrawText(op2, (GetScreenWidth() - MeasureText(op2, fontSizeOp))/2, 280, fontSizeOp, GRAY);
+            const char *textoPlay = "Press SPACE to play";
+            const char *textoCreditos = "Press C to credits";
+            DrawText(textoPlay, (largura_tela - MeasureText(textoPlay, 30))/2, altura_tela/2, 30, GRAY);
+            DrawText(textoCreditos, (largura_tela - MeasureText(textoCreditos, 30))/2, altura_tela/1.8, 30, GRAY);
 
-    EndDrawing();
-
-    // Lógica de navegação
-    if (IsKeyPressed(KEY_C)) return TELA_CREDITOS;
-    else return TELA_MENU;
+        EndDrawing();
+        // Se o jogador pressionar C → vai para créditos
+        if (IsKeyPressed(KEY_C)) {
+            return 1;
+        }
+        // Se pressionar ESC → fecha o jogo
+        if (IsKeyPressed(KEY_ESCAPE)) {
+            break;
+        }
+    }
+    return 0;
 }
