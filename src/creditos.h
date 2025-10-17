@@ -1,6 +1,8 @@
 #ifndef CREDITOS_H
 #define CREDITOS_H
 
-void init_creditos();
+#include "raylib.h"
+
+void AtualizarCreditos(void);
 
 #endif
