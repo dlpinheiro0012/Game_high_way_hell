@@ -7,7 +7,7 @@ int init_menu(const int largura_tela, const int altura_tela) {
 
             ClearBackground(BLACK);
 
-            const char *titulo = "Prepare-se para jogar!";
+            const char *titulo = "HighWay to Hell!!!";
             int tamanhoTitulo = 50;
             int larguraTitulo = MeasureText(titulo, tamanhoTitulo);
             DrawText(titulo, (largura_tela - larguraTitulo)/2, altura_tela/4, tamanhoTitulo, RAYWHITE);
