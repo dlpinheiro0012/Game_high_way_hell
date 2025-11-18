@@ -10,11 +10,13 @@
                 
                 // --- MUDANÇA 1: Usar workspaceFolder ---
                 // Isso pega TODOS os .c da pasta raiz do projeto
-                "${workspaceFolder}/source/*.c", 
+                "${workspaceFolder}/source/*.c",
+                "-I",
+                "include",
                 
                 // --- MUDANÇA 2: Usar workspaceFolder ---
                 "-o",
-                "${workspaceFolder}\\build\\projeto.exe", 
+                "${workspaceFolder}\\build\\projeto.exe",
                 
                 // --- Argumentos do Raylib (Idênticos) ---
                 "-I",
