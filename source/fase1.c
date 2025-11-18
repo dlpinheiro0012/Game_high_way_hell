@@ -10,5 +10,6 @@ typedef struct{
 void InitFase_1(){
     BeginDrawing();
         ClearBackground(CorBackGroundFase1);
+        DrawRectangle(0, 3*(alturaTela / 4), larguraTela, larguraTela / 4, BLACK);
     EndDrawing();
 }

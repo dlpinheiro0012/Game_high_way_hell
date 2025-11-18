@@ -12,25 +12,30 @@ int main(void) {
     Music musicTheme = musicMenu();
 
     SetTargetFPS(60);
-    Screen screenSelector = MENU_INICIAL;
+
+    Screen screenSelector = MENU_INICIAL; // MENU_INCIAL, CREDITOS, FASE1;
     
     while (!WindowShouldClose()) {
         SetMusicVolume(musicTheme, 0.1); 
         UpdateMusicStream(musicTheme);
-
-        if(IsKeyPressed(KEY_C)) screenSelector = 1;
-        else if(IsKeyPressed(KEY_BACKSPACE)) screenSelector = 0;
-
+        
         if(screenSelector == MENU_INICIAL){
             InitMenu(larguraTela, alturaTela);
-
+            
+            if(IsKeyPressed(KEY_C)) screenSelector = 1;
+            
             if (IsKeyPressed(KEY_SPACE))
-                screenSelector = FASE1;
+            screenSelector = FASE1;
         }
-        else if (screenSelector == CREDITOS) 
-            InitCreditos(larguraTela, alturaTela);
         
-        else if(screenSelector == FASE1) //Aqui, tem que gerar o local que o jogo vai rodar mesmo
+        else if (screenSelector == CREDITOS){ 
+            InitCreditos(larguraTela, alturaTela);
+            
+            if(IsKeyPressed(KEY_BACKSPACE)) screenSelector = 0;
+
+        }
+
+        else if(screenSelector == FASE1) // Seleciona a fase 1
             InitFase_1();
         
         else if(screenSelector == -1) // else, end the game
