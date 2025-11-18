@@ -36,7 +36,7 @@ int main(void) {
         }
 
         else if(screenSelector == FASE1) // Seleciona a fase 1
-            InitFase_1();
+            InitFase_1(larguraTela, alturaTela);
         
         else if(screenSelector == -1) // else, end the game
             break;

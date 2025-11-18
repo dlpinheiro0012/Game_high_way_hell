@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "menu.h"
 
-int InitMenu(const int largura_tela, const int altura_tela) {
+int InitMenu(const int larguraTela, const int alturaTela) {
 
         BeginDrawing();
             ClearBackground(BLACK);
@@ -9,11 +9,11 @@ int InitMenu(const int largura_tela, const int altura_tela) {
             const char *titulo = "HighWay to Hell!!!";
             int tamanhoTitulo = 50;
             int larguraTitulo = MeasureText(titulo, tamanhoTitulo);
-            DrawText(titulo, (largura_tela - larguraTitulo)/2, altura_tela/4, tamanhoTitulo, RAYWHITE);
+            DrawText(titulo, (larguraTela - larguraTitulo)/2, alturaTela/4, tamanhoTitulo, RAYWHITE);
 
             const char *textoPlay = "Press SPACE to play";
             const char *textoCreditos = "Press C to credits";
-            DrawText(textoPlay, (largura_tela - MeasureText(textoPlay, 30))/2, altura_tela/2, 30, GRAY);
-            DrawText(textoCreditos, (largura_tela - MeasureText(textoCreditos, 30))/2, altura_tela/1.8, 30, GRAY);
+            DrawText(textoPlay, (larguraTela - MeasureText(textoPlay, 30))/2, alturaTela/2, 30, GRAY);
+            DrawText(textoCreditos, (larguraTela - MeasureText(textoCreditos, 30))/2, alturaTela/1.8, 30, GRAY);
         EndDrawing();
 }
