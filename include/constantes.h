@@ -5,7 +5,8 @@
 typedef enum{
     MENU_INICIAL, // 0
     CREDITOS,     // 1
-    FASE1         // 2
+    LORE,         // 2
+    FASE1,        // 3
 }Screen;
 
 extern const int larguraTela;

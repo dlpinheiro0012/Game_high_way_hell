@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "fase1.h": "c",
-        "raylib.h": "c"
+        "raylib.h": "c",
+        "constantes.h": "c"
     }
 }
