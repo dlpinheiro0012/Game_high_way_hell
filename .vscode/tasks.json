@@ -14,7 +14,7 @@
                 
                 // --- MUDANÇA 2: Usar workspaceFolder ---
                 "-o",
-                "${workspaceFolder}\\projeto.exe", 
+                "${workspaceFolder}\\build\\projeto.exe", 
                 
                 // --- Argumentos do Raylib (Idênticos) ---
                 "-I",
