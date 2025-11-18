@@ -2,7 +2,7 @@
 #include "raylib.h"
 #include "creditos.h"
 
-int init_creditos(int largura_tela, int altura_tela) {
+int InitCreditos(int largura_tela, int altura_tela) {
     SetTargetFPS(60);
         BeginDrawing();
             ClearBackground(BLACK);

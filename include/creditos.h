@@ -2,6 +2,6 @@
 #define CREDITOS_H
 #include "raylib.h"
 
-int init_creditos(const int largura_tela, const int altura_tela);
+int InitCreditos(const int largura_tela, const int altura_tela);
 
 #endif

@@ -1,8 +1,17 @@
 #ifndef CONSTANTES_H
 #define CONSTANTES_H
+#include "raylib.h"
 
-int largura_tela();
+typedef enum{
+    MENU_INICIAL, // 0
+    CREDITOS,     // 1
+    FASE1         // 2
+}Screen;
 
-int altura_tela();
+extern const int larguraTela;
+
+extern const int alturaTela;
+
+extern const Color CorBackGroundFase1;
 
 #endif

@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "menu.h"
 
-int init_menu(const int largura_tela, const int altura_tela) {
+int InitMenu(const int largura_tela, const int altura_tela) {
 
         BeginDrawing();
             ClearBackground(BLACK);

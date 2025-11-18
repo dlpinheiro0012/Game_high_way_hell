@@ -1,10 +1,8 @@
 #include "constantes.h"
+#include "raylib.h"
 
-const int largura_tela(void){
-    return 1920;
-}
+const int larguraTela = 1920;
 
-const int altura_tela(void){
-    return 1080;
-}
+const int alturaTela = 1080;
 
+const Color CorBackGroundFase1 = {173, 0, 30, 200};
