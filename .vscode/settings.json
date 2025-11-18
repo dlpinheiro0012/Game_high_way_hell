@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "fase1.h": "c",
+        "raylib.h": "c"
+    }
+}

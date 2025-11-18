@@ -2,6 +2,6 @@
 #define MENU_H
 #include "raylib.h"
 
-int init_menu(const int largura_tela, const int altura_tela);
+int InitMenu(const int larguraTela, const int alturaTela);
 
 #endif
