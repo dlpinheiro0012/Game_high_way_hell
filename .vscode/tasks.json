@@ -3,10 +3,11 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",
-            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+            "command": "C:\\raylib\\w64devkit\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-gdwarf-4",
                 
                 // --- MUDANÇA 1: Usar workspaceFolder ---
                 // Isso pega TODOS os .c da pasta raiz do projeto
@@ -31,7 +32,10 @@
             ],
             "options": {
                 // --- MUDANÇA 3: Usar workspaceFolder ---
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:\\raylib\\w64devkit\\bin;${env:PATH}"
+                }
             },
             "problemMatcher": [
                 "$gcc"
