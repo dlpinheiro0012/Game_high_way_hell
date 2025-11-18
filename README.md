@@ -2,7 +2,7 @@
 Atualizar o Enredo do jogo.
 
 # Compilação do Jogo
-Instalar o Raylib no seu PC: https://www.raylib.com/
+Instalar o Raylib no seu PC: https://www.raylib.com/\n
 Apertar "CTRL + SHIFT + B".
 
 # Run do jogo
