@@ -5,7 +5,7 @@
 typedef enum{
     MENU_INICIAL, // 0
     CREDITOS,     // 1
-    LORE,         // 2
+    LORE1,        // 2
     FASE1,        // 3
 }Screen;
 
