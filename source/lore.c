@@ -4,6 +4,7 @@
 #include "constantes.h"
 #include <string.h>
 
+//função para entrar o texto de forma digitada e não estática
 void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, float velocidade) {
     static float contador = 0;
     contador += velocidade;
