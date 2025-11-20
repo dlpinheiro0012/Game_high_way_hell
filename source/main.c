@@ -8,7 +8,6 @@
 
 int main(void) {
     InitAudioDevice();
-    InitConfigTela();
     InitWindow(larguraTela, alturaTela, "High Way Hell");
     
     Music musicTheme = musicMenu();
