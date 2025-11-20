@@ -1,6 +1,6 @@
 #include "menu.h"
 
-int InitMenu(Screen* screenSelector) {
+void InitMenu(Screen* screenSelector) {
         BeginDrawing();
             ClearBackground(BLACK);
 

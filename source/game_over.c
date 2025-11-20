@@ -1,3 +1,5 @@
 #include "game_over.h"
 
-void InitGameOver(){}
+void InitGameOver(Screen *screenSelector){
+    
+}

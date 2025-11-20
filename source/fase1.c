@@ -1,6 +1,6 @@
 #include "fase1.h"
 
-int InitFase_1(Screen* screenSelector){
+void InitFase_1(Screen* screenSelector){
     const int limite_golpes = 10; //Limite de golpes necessário para derrotar o inimigo
     static int contador_ataques = 0; //Contador de ataques realizados pelo jogador
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
@@ -55,6 +55,4 @@ int InitFase_1(Screen* screenSelector){
         }
         
         EndDrawing();
-
-        return boolVenceu;
 }

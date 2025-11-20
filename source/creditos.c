@@ -1,6 +1,6 @@
 #include "creditos.h"
 
-int InitCreditos(Screen* screenSelector) {
+void InitCreditos(Screen* screenSelector) {
     SetTargetFPS(60);
         BeginDrawing();
             ClearBackground(BLACK);

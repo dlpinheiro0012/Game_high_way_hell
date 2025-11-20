@@ -9,6 +9,6 @@ typedef struct{
     int score;
 }Player;
 
-int InitFase_1(Screen* screenSelector);
+void InitFase_1(Screen* screenSelector);
 
 #endif

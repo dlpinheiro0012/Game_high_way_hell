@@ -5,6 +5,6 @@
 #include "load.h"
 #include "constantes.h"
 
-void InitGameOver();
+void InitGameOver(Screen* screenSelector);
 
 #endif

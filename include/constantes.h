@@ -10,6 +10,8 @@ typedef enum{
     GAME_OVER     // 4
 }Screen;
 
+typedef void (*Selector)(Screen* screenSelector);
+
 extern const int larguraTela;
 extern const int alturaTela;
 

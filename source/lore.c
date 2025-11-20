@@ -1,6 +1,6 @@
 #include "lore.h"
 
-int InitLore(Screen* screenSelector) {
+void InitLore(Screen* screenSelector) {
     SetTargetFPS(60);
     BeginDrawing();
     ClearBackground(BLACK);

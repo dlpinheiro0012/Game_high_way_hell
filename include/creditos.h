@@ -5,6 +5,6 @@
 #include "constantes.h"
 #include "load.h"
 
-int InitCreditos(Screen* screenSelector);
+void InitCreditos(Screen* screenSelector);
 
 #endif

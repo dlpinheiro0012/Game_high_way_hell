@@ -4,6 +4,6 @@
 #include "constantes.h"
 #include "load.h"
 
-int InitMenu(Screen* screenSelector);
+void InitMenu(Screen* screenSelector);
 
 #endif
