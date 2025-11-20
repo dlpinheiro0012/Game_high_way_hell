@@ -36,7 +36,7 @@ int InitLore(const int larguraTela, const int alturaTela) {
     DrawTextDigitado("Primeiro, googlios, um servo inferior, preparou uma barreira", larguraTela/10, alturaTela/2.8, 30, WHITE,0.6);
     DrawTextDigitado("impenetrável... Vença-a e siga HIGH WAY TO HELL!!!", larguraTela/10, alturaTela/2.5, 30, WHITE,0.6);
 
-    DrawTextDigitado("Pressione W para atingir seu inimigo", larguraTela/10, alturaTela/2, 20, RED,0.6);
+    DrawTextDigitado("Pressione D para atingir seu inimigo", larguraTela/10, alturaTela/2, 20, RED,0.6);
     DrawTextDigitado("Pressione H para começar", larguraTela/10, alturaTela/1.9, 20, RED,0.6);
 
     EndDrawing();
