@@ -9,9 +9,11 @@ typedef enum{
     FASE1,        // 3
 }Screen;
 
-extern const int larguraTela;
+extern int larguraTela;
 
-extern const int alturaTela;
+extern int alturaTela;
+
+void InitConfigTela();
 
 extern const Color CorBackGroundFase1;
 
