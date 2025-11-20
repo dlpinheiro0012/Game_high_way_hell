@@ -21,32 +21,20 @@ int main(void) {
         UpdateMusicStream(musicTheme);
         
         if(screenSelector == MENU_INICIAL){
-            InitMenu(larguraTela, alturaTela);
-            
-            if(IsKeyPressed(KEY_C)) 
-            screenSelector = CREDITOS;
-            
-            if (IsKeyPressed(KEY_SPACE))
-            screenSelector = LORE1;
+            InitMenu(&screenSelector);
         }
         
         else if (screenSelector == CREDITOS){ 
-            InitCreditos(larguraTela, alturaTela);
-            
-            if(IsKeyPressed(KEY_BACKSPACE)) 
-            screenSelector = 0;
-
+            InitCreditos(&screenSelector);
         }
 
         else if (screenSelector == LORE1) {
-            InitLore(larguraTela, alturaTela);
-
-            if (IsKeyPressed(KEY_H))
-            screenSelector = FASE1;
+            InitLore(&screenSelector);
 
         }
+        
         else if(screenSelector == FASE1) // Seleciona a fase 1
-            InitFase_1(larguraTela, alturaTela);
+            InitFase_1(&screenSelector);
         
         else if(screenSelector == -1) // else, end the game
             break;

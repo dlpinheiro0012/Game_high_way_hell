@@ -1,6 +1,8 @@
 #ifndef LOAD_H
 #define LOAD_H
 #include "raylib.h"
+#include <stdio.h>
+#include <string.h>
 
 Music musicMenu();
 

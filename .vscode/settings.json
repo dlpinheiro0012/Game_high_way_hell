@@ -4,6 +4,8 @@
         "raylib.h": "c",
         "constantes.h": "c",
         "load.h": "c",
-        "lore.h": "c"
+        "lore.h": "c",
+        "menu.h": "c",
+        "stdlib.h": "c"
     }
 }

@@ -7,6 +7,7 @@ typedef enum{
     CREDITOS,     // 1
     LORE1,        // 2
     FASE1,        // 3
+    GAME_OVER     // 4
 }Screen;
 
 extern const int larguraTela;

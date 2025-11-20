@@ -1,11 +1,6 @@
-#include <stdio.h>
-#include "raylib.h"
 #include "lore.h"
-#include "constantes.h"
-#include "load.h"
-#include <string.h>
 
-int InitLore(const int larguraTela, const int alturaTela) {
+int InitLore(Screen* screenSelector) {
     SetTargetFPS(60);
     BeginDrawing();
     ClearBackground(BLACK);
@@ -23,4 +18,8 @@ int InitLore(const int larguraTela, const int alturaTela) {
     DrawTextDigitado("Pressione H para começar", larguraTela/10, alturaTela/1.9, 20, RED,0.6);
 
     EndDrawing();
+
+    if(IsKeyPressed(KEY_H)){
+        *screenSelector = FASE1;
+    }
 }

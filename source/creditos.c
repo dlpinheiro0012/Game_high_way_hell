@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include "raylib.h"
 #include "creditos.h"
-#include "constantes.h"
 
-int InitCreditos(const int larguraTela, const int alturaTela) {
+int InitCreditos(Screen* screenSelector) {
     SetTargetFPS(60);
         BeginDrawing();
             ClearBackground(BLACK);
@@ -17,4 +14,7 @@ int InitCreditos(const int larguraTela, const int alturaTela) {
             DrawText("Gabriel Marins Zarour <gmz>", larguraTela/3.5, alturaTela/2.16, 55, WHITE);
             DrawText("Matheus Silva Vasconcelos <msv5>", larguraTela/3.5, alturaTela/1.98, 55, WHITE);
         EndDrawing();
+
+    if (IsKeyPressed(KEY_BACKSPACE))
+        *screenSelector = MENU_INICIAL;
 }
