@@ -2,25 +2,8 @@
 #include "raylib.h"
 #include "lore.h"
 #include "constantes.h"
+#include "load.h"
 #include <string.h>
-
-//função para entrar o texto de forma digitada e não estática
-void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, float velocidade) {
-    static float contador = 0;
-    contador += velocidade;
-
-    int letras = (int)contador;
-    int total = strlen(texto);
-
-    if (letras > total) letras = total;
-
-    char buffer[512];
-    strncpy(buffer, texto, letras);
-    buffer[letras] = '\0';
-
-    DrawText(buffer, x, y, size, cor);
-}
-
 
 int InitLore(const int larguraTela, const int alturaTela) {
     SetTargetFPS(60);
