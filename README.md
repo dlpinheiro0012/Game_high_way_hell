@@ -1,10 +1,10 @@
 # Game_high_way_hell
-The game is based on Street Fight, but without an dinamic enemy. We are proposing to the player be the
-"faster cliker" and reach the goal in less time. We only made teo simple phases for the time of work we had.
+The game is based on the Bonus Stage from Street Fight 2. The objective is for the player to be the
+"faster clicker" and reach the goal as fast as they can. We made simple phases due to time restrictions.
 
 # Game_compile
-Install raylib in your PC: https://www.raylib.com/  
+Install raylib on your PC: https://www.raylib.com/  
 Press "CTRL + SHIFT + B".
 
 # Game_Run
-Digit ".\build\jogo.exe" or open directily the .exe
+Enter ".\build\jogo.exe" in the terminal or open the .exe directly
