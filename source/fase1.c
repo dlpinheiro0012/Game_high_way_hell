@@ -1,7 +1,7 @@
 #include "fase1.h"
 
 void InitFase_1(Screen* screenSelector){
-    const int limite_golpes = 10; //Limite de golpes necessário para derrotar o inimigo
+    const int limite_golpes = 50; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
     static int contador_ataques = 0; //Contador de ataques realizados pelo jogador
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
     static int boolVenceu = 0; //Booleano para fazer a verificação de vitória
@@ -23,7 +23,7 @@ void InitFase_1(Screen* screenSelector){
         DrawRectangle(0, 3*(alturaTela / 4), larguraTela, larguraTela / 4, BLACK);
         DrawRectangle(80, (alturaTela / 8) * 2, 70, 500, GREEN);
         DrawText(TextFormat("Contagem de Ataques: %d", contador_ataques), (larguraTela / 2) - 150, 400, 30, WHITE);
-        DrawText(TextFormat("Contagem de Tempo: %d", 10 - (tempoAtual - tempoInicial)), (larguraTela / 2) - 150, 450, 30, WHITE);
+        DrawText(TextFormat("Contagem de Tempo: %d", 20 - (tempoAtual - tempoInicial)), (larguraTela / 2) - 150, 450, 30, WHITE);
 
         DrawRectangle((larguraTela / 2) - 300, (alturaTela / 1.5), 40, 90, BLUE); //Retângulo do jogador
         DrawRectangle((larguraTela / 2) + 300, (alturaTela / 1.64), 80, 150, WHITE); //Retângulo do inimigo
@@ -37,7 +37,7 @@ void InitFase_1(Screen* screenSelector){
         }
 
         if(contador_ataques == limite_golpes){
-            DrawText("VOCÊ VENCEU!!", 600, 400, 60, WHITE);
+            DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             boolTempoInicial = 0;
             boolVenceu = 1;
         }
@@ -50,7 +50,7 @@ void InitFase_1(Screen* screenSelector){
             tempoAtual = 0;
         }
         //Faz a verificação se o tempo do contador chegou em 10 e reincia todas as contagens p/ novas tentativas
-        else if(tempoAtual - tempoInicial == 10){
+        else if(tempoAtual - tempoInicial == 20){
             *screenSelector = GAME_OVER;
             boolTempoInicial = 0;
             tempoInicial = 0;
