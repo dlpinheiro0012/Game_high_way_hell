@@ -38,7 +38,7 @@ void InitFase_1(Screen* screenSelector){
             boolTempoInicial = 0;
             boolVenceu = 1;
         }
-
+        //Muda a tela após ter vencido e reinicia as variáveis para tentar novamente posteriormente
         else if(contador_ataques > limite_golpes){
             *screenSelector = CREDITOS;
             boolVenceu = 0;
