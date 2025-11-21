@@ -48,10 +48,10 @@ void InitFase_1(Screen* screenSelector){
         }
         //Faz a verificação se o tempo do contador chegou em 10 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual - tempoInicial == 10){
+            *screenSelector = GAME_OVER;
             boolTempoInicial = 0;
             tempoInicial = 0;
             tempoAtual = 0;
-            *screenSelector = GAME_OVER;
         }
         
         EndDrawing();

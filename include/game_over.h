@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "load.h"
 #include "constantes.h"
+#include "load.h"
 
 void InitGameOver(Screen* screenSelector);
 
