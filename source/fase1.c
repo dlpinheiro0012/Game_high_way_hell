@@ -22,8 +22,11 @@ void InitFase_1(Screen* screenSelector){
         ClearBackground(CorBackGroundFase1);
         DrawRectangle(0, 3*(alturaTela / 4), larguraTela, larguraTela / 4, BLACK);
         DrawRectangle(80, (alturaTela / 8) * 2, 70, 500, GREEN);
-        DrawText(TextFormat("Contagem de Ataques: %d", contador_ataques), 600, 600, 30, WHITE);
-        DrawText(TextFormat("Contagem de Tempo: %d", 10 - (tempoAtual - tempoInicial)), 600, 650, 30, WHITE);
+        DrawText(TextFormat("Contagem de Ataques: %d", contador_ataques), (larguraTela / 2) - 150, 400, 30, WHITE);
+        DrawText(TextFormat("Contagem de Tempo: %d", 10 - (tempoAtual - tempoInicial)), (larguraTela / 2) - 150, 450, 30, WHITE);
+
+        DrawRectangle((larguraTela / 2) - 300, (alturaTela / 1.5), 40, 90, BLUE); //Retângulo do jogador
+        DrawRectangle((larguraTela / 2) + 300, (alturaTela / 1.64), 80, 150, WHITE); //Retângulo do inimigo
 
         if(IsKeyPressed(KEY_D)){ //Toda vez que a tecla D for pressionada, o personagem fará um ataque
             contador_ataques++;
@@ -38,7 +41,7 @@ void InitFase_1(Screen* screenSelector){
             boolTempoInicial = 0;
             boolVenceu = 1;
         }
-        //Muda a tela após ter vencido e reinicia as variáveis para tentar novamente posteriormente
+
         else if(contador_ataques > limite_golpes){
             *screenSelector = CREDITOS;
             boolVenceu = 0;
