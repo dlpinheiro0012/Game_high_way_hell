@@ -5,8 +5,10 @@ int boolLoaded = 0;//flag para verificar se as imagens foram carregadas
 
 void InitMenu(Screen* screenSelector) {
     static Texture2D texture_menu;
-    if(boolLoaded == 0) texture_menu = LoadAnyTexture("assets/imagens/menus_creen.png");
-    boolLoaded = 1;
+    if(boolLoaded == 0) {
+        texture_menu = LoadAnyTexture("assets/imagens/menus_creen.png");
+        boolLoaded = 1;
+    }
         BeginDrawing();
             DrawTexture(texture_menu, 0, 0, WHITE);
             const char *textoPlay = "Press SPACE to play";
