@@ -22,3 +22,13 @@ void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, floa
 
     DrawText(buffer, x, y, size, cor);
 }
+
+Texture2D LoadAnyTexture(const char* path){
+    static Image image;
+    static Texture2D texture;
+    image = LoadImage(path);//carrega a imagem 
+    texture = LoadTextureFromImage(image);//cria a textura da imagem
+    UnloadImage(image);//descarrega a imagem
+
+    return texture;
+}
