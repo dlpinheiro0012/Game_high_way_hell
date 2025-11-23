@@ -5,9 +5,9 @@
 #include "load.h"
 
 typedef struct{
-    int hp;
-    int score;
-}Player;
+    Texture2D stand;
+    Texture2D fight;
+}Person;
 
 void InitFase_1(Screen* screenSelector);
 
