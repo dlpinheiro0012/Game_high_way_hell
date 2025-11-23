@@ -28,22 +28,29 @@ void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, floa
 Texture2D LoadAnyTexture(const char* path){
     static Image image;
     static Texture2D texture;
-    image = LoadImage(path);//carrega a imagem 
-    texture = LoadTextureFromImage(image);//cria a textura da imagem
-    UnloadImage(image);//descarrega a imagem
+    
+    image = LoadImage(path);//carrega a imagem
 
-    return texture;
+    if(IsImageValid(image)){
+        texture = LoadTextureFromImage(image);//cria a textura da imagem
+        UnloadImage(image);//descarrega a imagem
+        
+        return texture;
+    }
 }
 
 //Carregamento de personagens
 Texture2D LoadPerson(const char* path, float multiplier){
     Image image = LoadImage(path);
-    int imageWidth = image.width;
-    int imageHeight = image.height;
 
-    ImageResizeNN(&image, multiplier * imageWidth, multiplier * imageHeight);
-    Texture2D texture = LoadTextureFromImage(image);
-    UnloadImage(image);
+    if (IsImageValid(image)){
+        int imageWidth = image.width;
+        int imageHeight = image.height;
 
-    return texture;
+        ImageResizeNN(&image, multiplier * imageWidth, multiplier * imageHeight);
+        Texture2D texture = LoadTextureFromImage(image);
+        UnloadImage(image);
+
+        return texture;
+    }
 }

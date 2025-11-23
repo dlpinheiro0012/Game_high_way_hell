@@ -15,6 +15,7 @@ void InitFase_1(Screen* screenSelector){
     
     static Texture2D textureBackground;//Textura para o background
     static Texture2D textureGround;//Textura para o chão
+    
     static Person Enemy;//Textura para o inimigo
     static Person mainCharacter;//Textura para o protagonista
     
@@ -23,9 +24,11 @@ void InitFase_1(Screen* screenSelector){
         boolTempoInicial = 1;
         tempoInicial = GetTime(); //pega o tempo de começo da contagem
         
-        //Carregamento das texturas de background, chão, inimigo e protagonista
+        //Carregamento das texturas de background e chão
         textureBackground = LoadAnyTexture("assets/imagens/background_inferno_1.png");
         textureGround = LoadAnyTexture("assets/imagens/ground.jpg");
+        
+        //Carregamento de texturas de personagens
         Enemy.stand = LoadPerson("assets/imagens/demon_stand.png", 3);
         Enemy.fight = LoadPerson("assets/imagens/demon_suffer.png", 6);
         mainCharacter.stand = LoadPerson("assets/imagens/main_character_standing.png", 1.25);
@@ -77,15 +80,20 @@ void InitFase_1(Screen* screenSelector){
         }
 
         else if(contadorAtaques > limite_golpes){
+            //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
             UnloadTexture(textureGround);
+            
+            //Descarregamento das texturas dos personagens
             UnloadTexture(Enemy.stand);
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
             
+            //Seleção da tela de menu
             *screenSelector = CREDITOS;
             
+            //Reset de variáveis
             boolVenceu = 0;
             contadorAtaques = 0;
             tempoInicial = 0;
@@ -94,15 +102,20 @@ void InitFase_1(Screen* screenSelector){
         
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual - tempoInicial == 20){
+            //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
             UnloadTexture(textureGround);
+            
+            //Descarregamento das texturas dos personagens
             UnloadTexture(Enemy.stand);
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
             
+            //Selecão da tela de game over
             *screenSelector = GAME_OVER;
             
+            //Reset de variáveis
             boolTempoInicial = 0;
             contadorAtaques = 0;
             tempoInicial = 0;

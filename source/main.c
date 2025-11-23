@@ -33,6 +33,8 @@ int main(void) {
         Choose[screenSelector](&screenSelector); // Seleção dentro do ponteiro de funções;
     }
 
+    UnloadMusicStream(musicTheme);
+
     CloseWindow();
     return 0;
 }
