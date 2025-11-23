@@ -1,5 +1,4 @@
 #include "fase1.h"
-#include "load.h"
 
 void InitFase_1(Screen* screenSelector){
     const int limite_golpes = 100; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
