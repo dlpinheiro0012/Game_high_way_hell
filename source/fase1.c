@@ -21,6 +21,7 @@ void InitFase_1(Screen* screenSelector){
         boolTempoInicial = 1;
         tempoInicial = GetTime(); //pega o tempo de começo da contagem
         
+        //Carregamento das texturas de background, chão, inimigo e protagonista
         texture_bg = LoadAnyTexture("assets/imagens/background_inferno_1.png");
         texture_ground = LoadAnyTexture("assets/imagens/ground.jpg");
         texture_enemy = LoadPerson("assets/imagens/demon_idle_1.png", 3);
@@ -35,8 +36,8 @@ void InitFase_1(Screen* screenSelector){
         DrawTexture(texture_bg, 0, 0, WHITE);// desenha a textura do background
         DrawTexture(texture_ground, 0, 810, WHITE);// desenha a textura do chão
         DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, 500, GREEN);
-        //DrawText(TextFormat("Ataques: %d", contadorAtaques), 4 * (larguraTela / 9), alturaTela / 6, 45, WHITE);
-        DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual - tempoInicial)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE);
+
+        DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual - tempoInicial)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE); //Mostra quanto tempo falta para o jogador
 
         DrawTexture(texture_main_character, 2 * (larguraTela / 8), (alturaTela / 2), WHITE); //Retângulo do jogador
         DrawTexture(texture_enemy ,(larguraTela / 4), (alturaTela / 16), WHITE); //Retângulo do inimigo
@@ -67,6 +68,7 @@ void InitFase_1(Screen* screenSelector){
             tempoInicial = 0;
             tempoAtual = 0;
         }
+        
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual - tempoInicial == 20){
             UnloadTexture(texture_bg);

@@ -7,6 +7,7 @@ Music musicMenu(){
     return musicTheme;
 }
 
+//Função para digitar o texto suavemente
 void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, float velocidade) {
     static float contador = 0;
     contador += velocidade;
@@ -23,6 +24,7 @@ void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, floa
     DrawText(buffer, x, y, size, cor);
 }
 
+//Carregamento de qualquer imagem (desde que não seja personagens)
 Texture2D LoadAnyTexture(const char* path){
     static Image image;
     static Texture2D texture;
@@ -33,6 +35,7 @@ Texture2D LoadAnyTexture(const char* path){
     return texture;
 }
 
+//Carregamento de personagens
 Texture2D LoadPerson(const char* path, float multiplier){
     Image image = LoadImage(path);
     int imageWidth = image.width;
