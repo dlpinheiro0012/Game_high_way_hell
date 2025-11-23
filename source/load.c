@@ -32,3 +32,15 @@ Texture2D LoadAnyTexture(const char* path){
 
     return texture;
 }
+
+Texture2D LoadPerson(const char* path){
+    Image image = LoadImage(path);
+    int imageWidth = image.width;
+    int imageHeight = image.height;
+
+    ImageResizeNN(&image, 3 * imageWidth, 3 * imageHeight);
+    Texture2D texture = LoadTextureFromImage(image);
+    UnloadImage(image);
+
+    return texture;
+}

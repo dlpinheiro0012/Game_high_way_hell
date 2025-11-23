@@ -10,4 +10,6 @@ void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, floa
 
 Texture2D LoadAnyTexture(const char* path);
 
+Texture2D LoadPerson(const char* path);
+
 #endif 
