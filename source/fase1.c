@@ -25,7 +25,7 @@ void InitFase_1(Screen* screenSelector){
         texture_bg = LoadAnyTexture("assets/imagens/background_inferno_1.png");
         texture_ground = LoadAnyTexture("assets/imagens/ground.jpg");
         texture_enemy = LoadPerson("assets/imagens/demon_idle_1.png", 3);
-        texture_main_character = LoadPerson("assets/imagens/main_character_1.png", 2);
+        texture_main_character = LoadPerson("assets/imagens/main_character.png", 1.5);
     }
 
     if (boolTempoInicial == 1){
@@ -40,7 +40,7 @@ void InitFase_1(Screen* screenSelector){
         DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual - tempoInicial)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE); //Mostra quanto tempo falta para o jogador
 
         DrawTexture(texture_main_character, 2 * (larguraTela / 8), (alturaTela / 2), WHITE); //Retângulo do jogador
-        DrawTexture(texture_enemy ,(larguraTela / 4), (alturaTela / 16), WHITE); //Retângulo do inimigo
+        DrawTexture(texture_enemy ,(larguraTela / 4), (alturaTela / 64), WHITE); //Retângulo do inimigo
 
         if(IsKeyPressed(KEY_D)){ //Toda vez que a tecla D for pressionada, o personagem fará um ataque
             contadorAtaques++;
