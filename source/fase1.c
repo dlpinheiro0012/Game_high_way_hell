@@ -3,7 +3,7 @@
 
 void InitFase_1(Screen* screenSelector){
     const int limite_golpes = 100; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
-    static int contador_ataques = 0; //Contador de ataques realizados pelo jogador
+    static int contadorAtaques = 0; //Contador de ataques realizados pelo jogador
     
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
     static int boolVenceu = 0; //Booleano para fazer a verificação de vitória
@@ -14,6 +14,7 @@ void InitFase_1(Screen* screenSelector){
     static Texture2D texture_bg;//Textura para o background
     static Texture2D texture_ground;//Textura para o chão
     static Texture2D texture_enemy;//Textura para o inimigo
+    static Texture2D texture_main_character;//Textura para o protagonista
     
     //Se a fase tiver começado(Key_H) e o booleano tiver zerado(não começou), começa a contagem
     if (IsKeyPressed(KEY_H) && boolTempoInicial == 0 && boolVenceu == 0){
@@ -22,8 +23,8 @@ void InitFase_1(Screen* screenSelector){
         
         texture_bg = LoadAnyTexture("assets/imagens/background_inferno_1.png");
         texture_ground = LoadAnyTexture("assets/imagens/ground.jpg");
-        texture_enemy = LoadPerson("assets/imagens/demon_idle_1.png");  
-        
+        texture_enemy = LoadPerson("assets/imagens/demon_idle_1.png", 3);
+        texture_main_character = LoadPerson("assets/imagens/main_character_1.png", 2);
     }
 
     if (boolTempoInicial == 1){
@@ -33,28 +34,28 @@ void InitFase_1(Screen* screenSelector){
     BeginDrawing();
         DrawTexture(texture_bg, 0, 0, WHITE);// desenha a textura do background
         DrawTexture(texture_ground, 0, 810, WHITE);// desenha a textura do chão
-        DrawRectangle(80, (alturaTela / 8) * 2, 70, 500, GREEN);
-        DrawText(TextFormat("Contagem de Ataques: %d", contador_ataques), (larguraTela / 2) - 150, 400, 30, WHITE);
-        DrawText(TextFormat("Contagem de Tempo: %d", 20 - (tempoAtual - tempoInicial)), (larguraTela / 2) - 150, 450, 30, WHITE);
+        DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, 500, GREEN);
+        //DrawText(TextFormat("Ataques: %d", contadorAtaques), 4 * (larguraTela / 9), alturaTela / 6, 45, WHITE);
+        DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual - tempoInicial)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE);
 
-        DrawRectangle((larguraTela / 2) - 300, (alturaTela / 1.5), 40, 90, BLUE); //Retângulo do jogador
+        DrawTexture(texture_main_character, 2 * (larguraTela / 8), (alturaTela / 2), WHITE); //Retângulo do jogador
         DrawTexture(texture_enemy ,(larguraTela / 4), (alturaTela / 16), WHITE); //Retângulo do inimigo
 
         if(IsKeyPressed(KEY_D)){ //Toda vez que a tecla D for pressionada, o personagem fará um ataque
-            contador_ataques++;
+            contadorAtaques++;
         }
 
-        if(contador_ataques > 0 && contador_ataques <= limite_golpes){ //Quando o contador de ataques for maior do que 0 (ele acertou um ataque)
-            DrawRectangle(80, (alturaTela / 8) * 2, 70, contador_ataques * (500 / limite_golpes), BLACK);
+        if(contadorAtaques > 0 && contadorAtaques <= limite_golpes){ //Quando o contador de ataques for maior do que 0 (ele acertou um ataque)
+            DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, contadorAtaques * (500 / limite_golpes), BLACK);
         }
 
-        if(contador_ataques == limite_golpes){
+        if(contadorAtaques == limite_golpes){
             DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             boolTempoInicial = 0;
             boolVenceu = 1;
         }
 
-        else if(contador_ataques > limite_golpes){
+        else if(contadorAtaques > limite_golpes){
             UnloadTexture(texture_bg);
             UnloadTexture(texture_ground);
             UnloadTexture(texture_enemy);
@@ -62,7 +63,7 @@ void InitFase_1(Screen* screenSelector){
             *screenSelector = CREDITOS;
             
             boolVenceu = 0;
-            contador_ataques = 0;
+            contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
         }
@@ -75,6 +76,7 @@ void InitFase_1(Screen* screenSelector){
             *screenSelector = GAME_OVER;
             
             boolTempoInicial = 0;
+            contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
         }
