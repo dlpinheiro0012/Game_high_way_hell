@@ -74,6 +74,7 @@ void InitFase_1(Screen* screenSelector){
             UnloadTexture(texture_bg);
             UnloadTexture(texture_ground);
             UnloadTexture(texture_enemy);
+            UnloadTexture(texture_main_character);
             
             *screenSelector = GAME_OVER;
             
