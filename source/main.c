@@ -6,6 +6,7 @@
 #include "fase1.h"
 #include "lore.h"
 #include "game_over.h"
+#include "fase2.h"
 
 int main(void) {
     InitAudioDevice(); // Inicialização do gerenciador de áudio;
@@ -27,7 +28,8 @@ int main(void) {
             InitCreditos,
             InitLore,
             InitFase_1,
-            InitGameOver
+            InitGameOver,
+            InitFase_2
         };
 
         Choose[screenSelector](&screenSelector); // Seleção dentro do ponteiro de funções;
