@@ -1,7 +1,7 @@
 #include "fase1.h"
 
 void InitFase_1(Screen* screenSelector){
-    const int limite_golpes = 100; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
+    const int limite_golpes = 50; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
     static int contadorAtaques = 0; //Contador de ataques realizados pelo jogador
     
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
@@ -76,6 +76,17 @@ void InitFase_1(Screen* screenSelector){
             DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             boolTempoInicial = 0;
             boolVenceu = 1;
+            //Descarregamento da textura do chão e do background
+            UnloadTexture(textureBackground);
+            UnloadTexture(textureGround);
+            
+            //Descarregamento das texturas dos personagens
+            UnloadTexture(Enemy.stand);
+            UnloadTexture(Enemy.fight);
+            UnloadTexture(mainCharacter.stand);
+            UnloadTexture(mainCharacter.fight);
+            
+            *screenSelector = FASE2;
         }
 
         else if(contadorAtaques > limite_golpes){

@@ -28,8 +28,8 @@ int main(void) {
             InitCreditos,
             InitLore,
             InitFase_1,
+            InitFase_2,
             InitGameOver,
-            InitFase_2
         };
 
         Choose[screenSelector](&screenSelector); // Seleção dentro do ponteiro de funções;
