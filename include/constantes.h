@@ -9,7 +9,8 @@ typedef enum{
     FASE1,        // 3
     INTERLUDIO,   // 4
     FASE2,        // 5
-    GAME_OVER     // 6
+    GAME_OVER,    // 6
+    ENDING        // 7  
 }Screen;
 
 typedef void (*Selector)(Screen* screenSelector);

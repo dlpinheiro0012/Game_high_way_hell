@@ -75,7 +75,7 @@ void InitFase_2(Screen* screenSelector){
             DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             boolTempoInicial_2_2 = 0;
             boolVenceu_2 = 0;
-            *screenSelector = CREDITOS;
+            *screenSelector = ENDING;
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground_2);
             UnloadTexture(textureGround_2);
@@ -105,7 +105,7 @@ void InitFase_2(Screen* screenSelector){
             UnloadTexture(mainCharacter_2.fight_2);
             
             //Seleção da tela de menu
-            *screenSelector = CREDITOS;
+            *screenSelector = ENDING;
             
             //Reset de variáveis
             boolVenceu_2 = 0;
