@@ -75,7 +75,7 @@ void InitFase_1(Screen* screenSelector){
         if(contadorAtaques == limite_golpes){
             
             DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
-            *screenSelector = FASE2;
+            *screenSelector = INTERLUDIO;
             //Reset de variáveis
             contadorAtaques = 0;
             tempoInicial = 0;

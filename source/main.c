@@ -7,6 +7,7 @@
 #include "lore.h"
 #include "game_over.h"
 #include "fase2.h"
+#include "interludio.h"
 
 int main(void) {
     InitAudioDevice(); // Inicialização do gerenciador de áudio;
@@ -17,7 +18,7 @@ int main(void) {
 
     SetTargetFPS(60);
 
-    Screen screenSelector = MENU_INICIAL; // MENU_INCIAL(1), CREDITOS(2), LORE (3), FASE1(4), GAME_OVER(5);
+    Screen screenSelector = MENU_INICIAL; // MENU_INCIAL(1), CREDITOS(2), LORE (3), FASE1(4), INTERLUDIO(5), FASE2(6) GAME_OVER(7);
     
     while (!WindowShouldClose()) {
         SetMusicVolume(musicTheme, 0.1); 
@@ -28,6 +29,7 @@ int main(void) {
             InitCreditos,
             InitLore,
             InitFase_1,
+            InitInterludio,
             InitFase_2,
             InitGameOver,
         };

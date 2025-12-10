@@ -7,8 +7,9 @@ typedef enum{
     CREDITOS,     // 1
     LORE1,        // 2
     FASE1,        // 3
-    FASE2,        // 4
-    GAME_OVER     // 5
+    INTERLUDIO,   // 4
+    FASE2,        // 5
+    GAME_OVER     // 6
 }Screen;
 
 typedef void (*Selector)(Screen* screenSelector);
