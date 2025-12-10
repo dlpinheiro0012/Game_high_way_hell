@@ -27,8 +27,8 @@ void InitFase_2(Screen* screenSelector){
         textureGround_2 = LoadAnyTexture("assets/imagens/ground.jpg");
         
         //Carregamento de texturas de personagens
-        Enemy_2.stand_2 = LoadPerson("assets/imagens/demon_stand.png", 3);
-        Enemy_2.fight_2 = LoadPerson("assets/imagens/demon_suffer.png", 6);
+        Enemy_2.stand_2 = LoadPerson("assets/imagens/demon_king.png", 0.45);
+        Enemy_2.fight_2 = LoadPerson("assets/imagens/demon_king_takehit.png", 0.55);
         mainCharacter_2.stand_2 = LoadPerson("assets/imagens/main_character_standing.png", 1.25);
         mainCharacter_2.fight_2 = LoadPerson("assets/imagens/main_character_fighting.png", 2);
     }
@@ -38,15 +38,15 @@ void InitFase_2(Screen* screenSelector){
     }
 
     BeginDrawing();
-        DrawTexture(textureBackground_2, 0, 0, WHITE);// desenha a textura do background
+        DrawTexture(textureBackground_2, -200, 0, WHITE);// desenha a textura do background
         DrawTexture(textureGround_2, 0, 810, WHITE);// desenha a textura do chão
         DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, 500, GREEN);
 
         DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual_2 - tempoInicial_2)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE); //Mostra quanto tempo falta para o jogador
 
         if(!IsKeyPressed(KEY_D) && boolAnimacao_2 == 0){ //Toda vez que a tecla D for pressionada, o personagem fará um ataque
-            DrawTexture(mainCharacter_2.stand_2, 2 * (larguraTela / 8), (alturaTela / 1.75), WHITE); //Textura do protagonista parado
-            DrawTexture(Enemy_2.stand_2 ,(larguraTela / 4), (alturaTela / 64), WHITE);
+            DrawTexture(mainCharacter_2.stand_2, 1 * (larguraTela / 8), (alturaTela / 1.75), WHITE); //Textura do protagonista parado
+            DrawTexture(Enemy_2.stand_2 ,(larguraTela / 4), (alturaTela / 8), WHITE);
         }
 
         else{
@@ -58,7 +58,7 @@ void InitFase_2(Screen* screenSelector){
             if (boolAnimacao_2 == 1){
                 tempoAnimacao_2 -= GetFrameTime();
                 DrawTexture(mainCharacter_2.fight_2, 2 * (larguraTela / 8), (alturaTela / 1.75), WHITE); //Textura do protagonista lutando
-                DrawTexture(Enemy_2.fight_2, (larguraTela / 4), (alturaTela / 64), WHITE); //Textura do inimigo sofrendo hit
+                DrawTexture(Enemy_2.fight_2, (larguraTela / 4), (alturaTela / 8), WHITE); //Textura do inimigo sofrendo hit
 
                 if (tempoAnimacao_2 <= 0){
                     boolAnimacao_2 = 0;

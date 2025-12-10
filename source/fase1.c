@@ -24,7 +24,7 @@ void InitFase_1(Screen* screenSelector){
         tempoInicial = GetTime(); //pega o tempo de começo da contagem
         
         //Carregamento das texturas de background e chão
-        textureBackground = LoadAnyTexture("assets/imagens/background_inferno_1.png");
+        textureBackground = LoadAnyTexture("assets/imagens/background_hellgate.jpg");
         textureGround = LoadAnyTexture("assets/imagens/ground.jpg");
         
         //Carregamento de texturas de personagens
