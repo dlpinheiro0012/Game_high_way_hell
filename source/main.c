@@ -11,7 +11,7 @@
 int main(void) {
     InitAudioDevice(); // Inicialização do gerenciador de áudio;
     InitWindow(larguraTela, alturaTela, "High Way to Hell"); // Inicialização da tela;
-    ToggleFullscreen();
+    //ToggleFullscreen();
     
     Music musicTheme = musicMenu();
 
