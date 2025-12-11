@@ -24,6 +24,7 @@ void InitEnding(Screen* screenSelector) {
 
     if(IsKeyPressed(KEY_H)){
         *screenSelector = CREDITOS;
+        boolLoadedEnd = 0;
         UnloadTexture(textureGoodEnd);
     }
 }

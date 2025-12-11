@@ -104,8 +104,7 @@ void InitFase_2(Screen* screenSelector){
             contadorAtaques_2 = 0;
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
-
-            
+            boolLoadedFase2 = 0;
         }
 
         else if(contadorAtaques_2 > limite_golpes_2){
@@ -127,6 +126,7 @@ void InitFase_2(Screen* screenSelector){
             contadorAtaques_2 = 0;
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
+            boolLoadedFase2 = 0;
         }
         
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
@@ -149,6 +149,7 @@ void InitFase_2(Screen* screenSelector){
             contadorAtaques_2 = 0;
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
+            boolLoadedFase2 = 0;
         }
         
         EndDrawing();

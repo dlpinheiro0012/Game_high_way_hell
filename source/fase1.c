@@ -88,6 +88,7 @@ void InitFase_1(Screen* screenSelector){
             tempoAtual = 0;
             boolTempoInicial = 0;
             boolVenceu = 0;
+            boolLoadedFase1 = 0;
 
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
@@ -109,6 +110,7 @@ void InitFase_1(Screen* screenSelector){
             contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
+            boolLoadedFase1 = 0;
 
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
@@ -131,6 +133,7 @@ void InitFase_1(Screen* screenSelector){
             contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
+            boolLoadedFase1 = 0;
 
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
