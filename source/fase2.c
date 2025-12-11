@@ -7,7 +7,8 @@ void InitFase_2(Screen* screenSelector){
     static int boolTempoInicial_2_2 = 0; //Booleano para fazer a verificação: Contador Começou Agora?
     static int boolVenceu_2 = 0; //Booleano para fazer a verificação de vitória
     static int boolAnimacao_2 = 0;
-    
+    static int boolLoadedFase2 = 0;
+
     static int tempoInicial_2 = 0; // Tempo inicial do contador
     static int tempoAtual_2 = 0; // Tempo atual que está passando
     static float tempoAnimacao_2 = 0.25;
@@ -18,6 +19,20 @@ void InitFase_2(Screen* screenSelector){
     static Person_2 Enemy_2;//Textura para o inimigo
     static Person_2 mainCharacter_2;//Textura para o protagonista
     
+    if (boolLoadedFase2 == 0) {
+
+        textureBackground_2 = LoadAnyTexture("assets/imagens/background_castle.png");
+        textureGround_2     = LoadAnyTexture("assets/imagens/ground.jpg");
+
+        Enemy_2.stand_2 = LoadPerson("assets/imagens/demon_king.png", 0.45);
+        Enemy_2.fight_2 = LoadPerson("assets/imagens/demon_king_takehit.png", 0.55);
+
+        mainCharacter_2.stand_2 = LoadPerson("assets/imagens/main_character_standing.png", 1.25);
+        mainCharacter_2.fight_2 = LoadPerson("assets/imagens/main_character_fighting.png", 2);
+
+        boolLoadedFase2 = 1;
+    }
+
     //Se a fase tiver começado e o booleano tiver zerado(não começou), começa a contagem
     if (boolTempoInicial_2_2 == 0 && boolVenceu_2 == 0){
         boolTempoInicial_2_2 = 1;

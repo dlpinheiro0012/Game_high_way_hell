@@ -7,6 +7,13 @@ Music musicMenu(){
     return musicTheme;
 }
 
+Music musicFase1(){ 
+    Music musicTheme = LoadMusicStream("assets/musicas/hwh_music.mp3");
+    if (IsMusicValid(musicTheme)) PlayMusicStream(musicTheme);
+
+    return musicTheme;
+}
+
 //Função para digitar o texto suavemente
 void DrawTextDigitado(const char *texto, int x, int y, int size, Color cor, float velocidade) {
     static float contador = 0;

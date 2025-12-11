@@ -7,7 +7,8 @@ void InitFase_1(Screen* screenSelector){
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
     static int boolVenceu = 0; //Booleano para fazer a verificação de vitória
     static int boolAnimacao = 0;
-    
+    static int boolLoadedFase1 = 0;
+
     static int tempoInicial = 0; // Tempo inicial do contador
     static int tempoAtual = 0; // Tempo atual que está passando
     static float tempoAnimacao = 0.25;
@@ -17,21 +18,24 @@ void InitFase_1(Screen* screenSelector){
     
     static Person Enemy;//Textura para o inimigo
     static Person mainCharacter;//Textura para o protagonista
+
+    if (boolLoadedFase1 == 0) {
+        textureBackground = LoadAnyTexture("assets/imagens/background_hellgate.jpg");
+        textureGround     = LoadAnyTexture("assets/imagens/ground.jpg");
+
+        Enemy.stand  = LoadPerson("assets/imagens/demon_stand.png",   3);
+        Enemy.fight  = LoadPerson("assets/imagens/demon_suffer.png",  6);
+
+        mainCharacter.stand = LoadPerson("assets/imagens/main_character_standing.png", 1.25);
+        mainCharacter.fight = LoadPerson("assets/imagens/main_character_fighting.png", 2);
+
+        boolLoadedFase1 = 1;
+    }
     
     //Se a fase tiver começado(Key_H) e o booleano tiver zerado(não começou), começa a contagem
     if (IsKeyPressed(KEY_H) && boolTempoInicial == 0 && boolVenceu == 0){
         boolTempoInicial = 1;
         tempoInicial = GetTime(); //pega o tempo de começo da contagem
-        
-        //Carregamento das texturas de background e chão
-        textureBackground = LoadAnyTexture("assets/imagens/background_hellgate.jpg");
-        textureGround = LoadAnyTexture("assets/imagens/ground.jpg");
-        
-        //Carregamento de texturas de personagens
-        Enemy.stand = LoadPerson("assets/imagens/demon_stand.png", 3);
-        Enemy.fight = LoadPerson("assets/imagens/demon_suffer.png", 6);
-        mainCharacter.stand = LoadPerson("assets/imagens/main_character_standing.png", 1.25);
-        mainCharacter.fight = LoadPerson("assets/imagens/main_character_fighting.png", 2);
     }
 
     if (boolTempoInicial == 1){
@@ -39,8 +43,11 @@ void InitFase_1(Screen* screenSelector){
     }
 
     BeginDrawing();
+        ClearBackground(BLACK);
+
         DrawTexture(textureBackground, 0, 0, WHITE);// desenha a textura do background
         DrawTexture(textureGround, 0, 810, WHITE);// desenha a textura do chão
+        
         DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, 500, GREEN);
 
         DrawText(TextFormat("Tempo: %d", 20 - (tempoAtual - tempoInicial)), 4 * (larguraTela / 9), alturaTela / 8, 45, WHITE); //Mostra quanto tempo falta para o jogador
@@ -73,37 +80,27 @@ void InitFase_1(Screen* screenSelector){
         }
 
         if(contadorAtaques == limite_golpes){
-            
-            DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             *screenSelector = INTERLUDIO;
+
             //Reset de variáveis
             contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
             boolTempoInicial = 0;
             boolVenceu = 0;
+
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
             UnloadTexture(textureGround);
+
             //Descarregamento das texturas dos personagens
             UnloadTexture(Enemy.stand);
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
-        
         }
 
         else if(contadorAtaques > limite_golpes){
-            //Descarregamento da textura do chão e do background
-            UnloadTexture(textureBackground);
-            UnloadTexture(textureGround);
-            
-            //Descarregamento das texturas dos personagens
-            UnloadTexture(Enemy.stand);
-            UnloadTexture(Enemy.fight);
-            UnloadTexture(mainCharacter.stand);
-            UnloadTexture(mainCharacter.fight);
-            
             //Seleção da tela de menu
             *screenSelector = CREDITOS;
             
@@ -112,10 +109,7 @@ void InitFase_1(Screen* screenSelector){
             contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
-        }
-        
-        //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
-        else if(tempoAtual - tempoInicial == 10){
+
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
             UnloadTexture(textureGround);
@@ -125,7 +119,10 @@ void InitFase_1(Screen* screenSelector){
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
-            
+        }
+        
+        //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
+        else if(tempoAtual - tempoInicial == 10){
             //Selecão da tela de game over
             *screenSelector = GAME_OVER;
             
@@ -134,6 +131,16 @@ void InitFase_1(Screen* screenSelector){
             contadorAtaques = 0;
             tempoInicial = 0;
             tempoAtual = 0;
+
+            //Descarregamento da textura do chão e do background
+            UnloadTexture(textureBackground);
+            UnloadTexture(textureGround);
+            
+            //Descarregamento das texturas dos personagens
+            UnloadTexture(Enemy.stand);
+            UnloadTexture(Enemy.fight);
+            UnloadTexture(mainCharacter.stand);
+            UnloadTexture(mainCharacter.fight);
         }
         
         EndDrawing();
