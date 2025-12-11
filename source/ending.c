@@ -16,9 +16,11 @@ void InitEnding(Screen* screenSelector) {
         ClearBackground(BLACK);
         DrawTexture(textureEnd, 0, 0, WHITE);
 
-        DrawTextDigitado("Depois de derrotar Jobos, você resgatou Alexandrina de seu cativeiro", larguraTela/15, alturaTela/7, 35, WHITE,1);
-        DrawTextDigitado("e roubou a moto de uma caveira flamejante que estava bobeando no inferno,", larguraTela/15, alturaTela/5, 35, WHITE,1);
-        DrawTextDigitado("finalmente escapando do Inferno da Maçã.", larguraTela/15, alturaTela/4, 35, WHITE,0.6);
+        DrawTextDigitado("'I-Impossível... Isso... Não pode ser...'", larguraTela/15, alturaTela/7, 35, YELLOW,1); DrawTextDigitado("- disse Jobos, caído no chão, derrotado.", larguraTela/15 + 630, alturaTela/7, 35, WHITE,1);
+        DrawTextDigitado("Vasculhando seus pertences, você encontra as chaves para a cela de Alexandrina, agora liberta.", larguraTela/15, alturaTela/5, 35, WHITE,1);
+        DrawTextDigitado("Assim, juntos, vocês roubam a moto de uma caveira motoqueira, e fogem do Império da Maçã.", larguraTela/15, alturaTela/4, 35, WHITE,0.6);
+        DrawTextDigitado("A paz em Motorolos é restaurada, enquanto o Império encontrou sua própria ruína.", larguraTela/15, alturaTela/3, 35, WHITE,0.6);
+        DrawTextDigitado("FIM!", larguraTela/15, alturaTela/2, 35, WHITE,0.6);
 
         DrawTextDigitado("Pressione H para os créditos!", larguraTela/15, 1.5 * alturaTela / 2, 30, WHITE,0.6);
 

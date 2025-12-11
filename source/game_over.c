@@ -13,10 +13,10 @@ void InitGameOver(Screen *screenSelector){
 
     BeginDrawing();
         ClearBackground(BLACK);
-        DrawTexture(textureGameOver, 0, 0, WHITE);
+        DrawTexture(textureGameOver, (larguraTela / 2) - 500, alturaTela - 800, WHITE);
 
         char* line_1 = "O guerreiro infelizmente cedeu, e";
-        char* line_2 = "agora a tirania da maçã continuará a reinar.";
+        char* line_2 = "agora a tirania da Maçã continuará a reinar.";
         char* line_3 = "O mundo está perdido...";
         char* line_4 = "Pressione espaço para voltar ao menu";
 

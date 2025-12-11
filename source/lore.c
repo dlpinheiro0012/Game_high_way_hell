@@ -17,17 +17,17 @@ void InitLore(Screen* screenSelector) {
 
         DrawTexture(textureLore, 0, 0, WHITE);
 
-        DrawTextDigitado("O Reino de Motorolos entrou em caos quando a princesa", larguraTela/15, alturaTela/7, 45, BLACK,1);
-        DrawTextDigitado("Alexandrina foi raptada por Jobos, tirano do inferno da maçã.", larguraTela/15, alturaTela/5.5, 45, BLACK,0.6);
+        DrawTextDigitado("O Reino de Motorolos entrou em caos quando a princesa Alexandrina foi raptada", larguraTela/15 - 100, alturaTela/7, 45, BLACK,1);
+        DrawTextDigitado("por Jobos, tirano do Inferno da Maçã, que deseja subjugar tudo e todos.", larguraTela/15 - 100, alturaTela/5.5, 45, BLACK,0.6);
 
-        DrawTextDigitado("Você, um herói imperativo, deve atravessar os dois vales de Cinlândia", larguraTela/15, alturaTela/4, 45, BLACK,0.6);
-        DrawTextDigitado("e descer rumo ao recanto de jobos para resgatá-la o mais rápido possivel!.", larguraTela/15, alturaTela/3.5, 45, BLACK,0.6);
+        DrawTextDigitado("A pedido da majestade Andy Roide, você, um herói imperativo, deve atravessar os", larguraTela/15 - 100, alturaTela/4, 45, BLACK,0.6);
+        DrawTextDigitado("dois vales de Cinlândia e descer rumo ao castelo de Jobos para resgatá-la!", larguraTela/15 - 100, alturaTela/3.5, 45, BLACK,0.6);
 
-        DrawTextDigitado("Primeiro, googlios, um servo inferior, preparou uma barreira", larguraTela/15, alturaTela/2.8, 45, BLACK,0.6);
-        DrawTextDigitado("impenetrável... Vença-a e siga HIGH WAY TO HELL!!!", larguraTela/15, alturaTela/2.5, 45, BLACK,0.6);
+        DrawTextDigitado("Primeiro Googlios, o navegador infernal, preparou uma barreira impenetrável...", larguraTela/15 - 100, alturaTela/2.8, 45, BLACK,0.6);
+        DrawTextDigitado("Derrote-o e siga HIGH WAY TO HELL!!!", larguraTela/15- 100, alturaTela/2.5, 45, BLACK,0.6);
 
-        DrawTextDigitado("Pressione D para atingir seu inimigo", larguraTela/15, 1.5 * alturaTela / 2, 30, RED,0.6);
-        DrawTextDigitado("Pressione H para começar", larguraTela/15, 1.5 * alturaTela / 1.9, 30, RED,0.6);
+        DrawTextDigitado("Pressione D para atingir seu inimigo", larguraTela/15 - 100, 1.5 * alturaTela / 2, 30, RED,0.6);
+        DrawTextDigitado("Pressione H para começar", larguraTela/15 - 100, 1.5 * alturaTela / 1.9, 30, RED,0.6);
 
     EndDrawing();
 
