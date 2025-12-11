@@ -1,7 +1,7 @@
 #include "fase2.h"
 
 void InitFase_2(Screen* screenSelector){
-    const int limite_golpes_2 = 5; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
+    const int limite_golpes_2 = 100; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
     static int contadorAtaques_2 = 0; //Contador de ataques realizados pelo jogador
     
     static int boolTempoInicial_2_2 = 0; //Booleano para fazer a verificação: Contador Começou Agora?
@@ -111,7 +111,7 @@ void InitFase_2(Screen* screenSelector){
         }
         
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
-        else if(tempoAtual_2 - tempoInicial_2 == 10){
+        else if(tempoAtual_2 - tempoInicial_2 == 20){
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground_2);
             UnloadTexture(textureGround_2);

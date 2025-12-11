@@ -1,7 +1,7 @@
 #include "fase1.h"
 
 void InitFase_1(Screen* screenSelector){
-    const int limite_golpes = 5; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
+    const int limite_golpes = 50; //Limite de golpes necessário para derrotar o inimigo - PRECISA SER MÚLTIPLO DE 500!
     static int contadorAtaques = 0; //Contador de ataques realizados pelo jogador
     
     static int boolTempoInicial = 0; //Booleano para fazer a verificação: Contador Começou Agora?
@@ -103,7 +103,7 @@ void InitFase_1(Screen* screenSelector){
         }
 
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
-        else if(tempoAtual - tempoInicial == 10){
+        else if(tempoAtual - tempoInicial == 20){
             
             
             //Reset de variáveis

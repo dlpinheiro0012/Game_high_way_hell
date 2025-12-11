@@ -23,10 +23,12 @@ void InitMenu(Screen* screenSelector) {
             UnloadTexture(textureMenu);
             boolLoadedMenu = 0;
             *screenSelector = LORE1;
+            return;
         }
         if (IsKeyPressed(KEY_C)){
             UnloadTexture(textureMenu);
             boolLoadedMenu = 0;
             *screenSelector = CREDITOS;
+            return;
         }
 }
