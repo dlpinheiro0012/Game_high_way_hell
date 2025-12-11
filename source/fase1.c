@@ -79,9 +79,7 @@ void InitFase_1(Screen* screenSelector){
             DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, contadorAtaques * (500 / limite_golpes), BLACK);
         }
 
-        if(contadorAtaques == limite_golpes){
-            *screenSelector = INTERLUDIO;
-
+        if(contadorAtaques >= limite_golpes){
             //Reset de variáveis
             contadorAtaques = 0;
             tempoInicial = 0;
@@ -99,34 +97,14 @@ void InitFase_1(Screen* screenSelector){
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
+            //Vai para o interlúdio
+            *screenSelector = INTERLUDIO;
+            return;
         }
 
-        else if(contadorAtaques > limite_golpes){
-            //Seleção da tela de menu
-            *screenSelector = CREDITOS;
-            
-            //Reset de variáveis
-            boolVenceu = 0;
-            contadorAtaques = 0;
-            tempoInicial = 0;
-            tempoAtual = 0;
-            boolLoadedFase1 = 0;
-
-            //Descarregamento da textura do chão e do background
-            UnloadTexture(textureBackground);
-            UnloadTexture(textureGround);
-            
-            //Descarregamento das texturas dos personagens
-            UnloadTexture(Enemy.stand);
-            UnloadTexture(Enemy.fight);
-            UnloadTexture(mainCharacter.stand);
-            UnloadTexture(mainCharacter.fight);
-        }
-        
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual - tempoInicial == 10){
-            //Selecão da tela de game over
-            *screenSelector = GAME_OVER;
+            
             
             //Reset de variáveis
             boolTempoInicial = 0;
@@ -144,6 +122,10 @@ void InitFase_1(Screen* screenSelector){
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
+
+            //Selecão da tela de game over
+            *screenSelector = GAME_OVER;
+            return;
         }
         
         EndDrawing();

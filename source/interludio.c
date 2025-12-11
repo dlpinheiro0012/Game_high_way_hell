@@ -12,6 +12,8 @@ void InitInterludio(Screen* screenSelector) {
     
     SetTargetFPS(60);
     BeginDrawing();
+        ClearBackground(BLACK);
+
         DrawTexture(textureInterludio, 0, 0, WHITE);
 
         DrawTextDigitado("A luta foi árdua, mas você conseguiu derrotar Googlios.", larguraTela/15, alturaTela/7, 35, WHITE,1);
@@ -27,8 +29,10 @@ void InitInterludio(Screen* screenSelector) {
     EndDrawing();
 
     if(IsKeyPressed(KEY_H)){
-        *screenSelector = FASE2;
+        
         boolLoadedInterludio = 0;
         UnloadTexture(textureInterludio);
+        *screenSelector = FASE2;
+        return;
     }
 }

@@ -86,11 +86,11 @@ void InitFase_2(Screen* screenSelector){
             DrawRectangle(7 * larguraTela / 8, (alturaTela / 8) * 2, 70, contadorAtaques_2 * (500 / limite_golpes_2), BLACK);
         }
 
-        if(contadorAtaques_2 == limite_golpes_2){
+        if(contadorAtaques_2 >= limite_golpes_2){
             DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
             boolTempoInicial_2_2 = 0;
             boolVenceu_2 = 0;
-            *screenSelector = ENDING;
+            
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground_2);
             UnloadTexture(textureGround_2);
@@ -105,28 +105,9 @@ void InitFase_2(Screen* screenSelector){
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
             boolLoadedFase2 = 0;
-        }
-
-        else if(contadorAtaques_2 > limite_golpes_2){
-            //Descarregamento da textura do chão e do background
-            UnloadTexture(textureBackground_2);
-            UnloadTexture(textureGround_2);
-            
-            //Descarregamento das texturas dos personagens
-            UnloadTexture(Enemy_2.stand_2);
-            UnloadTexture(Enemy_2.fight_2);
-            UnloadTexture(mainCharacter_2.stand_2);
-            UnloadTexture(mainCharacter_2.fight_2);
-            
-            //Seleção da tela de menu
+            //Vai para o fim
             *screenSelector = ENDING;
-            
-            //Reset de variáveis
-            boolVenceu_2 = 0;
-            contadorAtaques_2 = 0;
-            tempoInicial_2 = 0;
-            tempoAtual_2 = 0;
-            boolLoadedFase2 = 0;
+            return;
         }
         
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
@@ -141,15 +122,16 @@ void InitFase_2(Screen* screenSelector){
             UnloadTexture(mainCharacter_2.stand_2);
             UnloadTexture(mainCharacter_2.fight_2);
             
-            //Selecão da tela de game over
-            *screenSelector = GAME_OVER;
-            
             //Reset de variáveis
             boolTempoInicial_2_2 = 0;
             contadorAtaques_2 = 0;
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
             boolLoadedFase2 = 0;
+
+            //Selecão da tela de game over
+            *screenSelector = GAME_OVER;
+            return;
         }
         
         EndDrawing();

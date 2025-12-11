@@ -1,18 +1,20 @@
 #include "ending.h"
 
 int boolLoadedEnd = 0;// Flag para verificar se as imagens foram carregadas
+static Texture2D textureEnd;
 
 void InitEnding(Screen* screenSelector) {
-    static Texture2D textureGoodEnd;
     
     if(boolLoadedEnd == 0) {
-        textureGoodEnd = LoadAnyTexture("assets/imagens/ending.png");
+        textureEnd = LoadAnyTexture("assets/imagens/ending.png");
         boolLoadedEnd = 1;
     }
     
     SetTargetFPS(60);
     BeginDrawing();
-        DrawTexture(textureGoodEnd, 0, 0, WHITE);
+    
+        ClearBackground(BLACK);
+        DrawTexture(textureEnd, 0, 0, WHITE);
 
         DrawTextDigitado("Depois de derrotar Jobos, você resgatou Alexandrina de seu cativeiro", larguraTela/15, alturaTela/7, 35, WHITE,1);
         DrawTextDigitado("e roubou a moto de uma caveira flamejante que estava bobeando no inferno,", larguraTela/15, alturaTela/5, 35, WHITE,1);
@@ -23,8 +25,9 @@ void InitEnding(Screen* screenSelector) {
     EndDrawing();
 
     if(IsKeyPressed(KEY_H)){
-        *screenSelector = CREDITOS;
         boolLoadedEnd = 0;
-        UnloadTexture(textureGoodEnd);
+        UnloadTexture(textureEnd);
+        *screenSelector = CREDITOS;
+        return;
     }
 }
