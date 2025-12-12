@@ -19,7 +19,7 @@ void InitFase_2(Screen* screenSelector){
     static Person_2 Enemy_2;//Textura para o inimigo
     static Person_2 mainCharacter_2;//Textura para o protagonista
     
-    if (boolLoadedFase2 == 0) {
+    if (boolLoadedFase2 == 0) {//carrega as texturas
 
         textureBackground_2 = LoadAnyTexture("assets/imagens/background_castle.png");
         textureGround_2     = LoadAnyTexture("assets/imagens/ground.jpg");
@@ -87,10 +87,7 @@ void InitFase_2(Screen* screenSelector){
         }
 
         if(contadorAtaques_2 >= limite_golpes_2){
-            DrawText("VOCÊ VENCEU!!", 600, 200, 60, WHITE);
-            boolTempoInicial_2_2 = 0;
-            boolVenceu_2 = 0;
-            
+        
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground_2);
             UnloadTexture(textureGround_2);
@@ -101,6 +98,8 @@ void InitFase_2(Screen* screenSelector){
             UnloadTexture(mainCharacter_2.stand_2);
             UnloadTexture(mainCharacter_2.fight_2); 
             //Reset de variáveis
+            boolTempoInicial_2_2 = 0;
+            boolVenceu_2 = 0;
             contadorAtaques_2 = 0;
             tempoInicial_2 = 0;
             tempoAtual_2 = 0;
@@ -112,6 +111,7 @@ void InitFase_2(Screen* screenSelector){
         
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual_2 - tempoInicial_2 == 20){
+
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground_2);
             UnloadTexture(textureGround_2);

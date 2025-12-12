@@ -13,13 +13,13 @@
 int main(void) {
     InitAudioDevice(); // Inicialização do gerenciador de áudio;
     InitWindow(larguraTela, alturaTela, "High Way to Hell"); // Inicialização da tela;
-    //ToggleFullscreen();
+    ToggleFullscreen();
     
     Music musicTheme = musicMenu();
 
     SetTargetFPS(60);
 
-    Screen screenSelector = MENU_INICIAL; // MENU_INCIAL(1), CREDITOS(2), LORE (3), FASE1(4), INTERLUDIO(5), FASE2(6) GAME_OVER(7), ENDING(8);
+    Screen screenSelector = MENU_INICIAL; // MENU_INCIAL(0), CREDITOS(1), LORE (2), FASE1(3), INTERLUDIO(4), FASE2(5) GAME_OVER(6), ENDING(7);
 
     while (!WindowShouldClose()) {
 

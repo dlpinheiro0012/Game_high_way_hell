@@ -19,7 +19,7 @@ void InitFase_1(Screen* screenSelector){
     static Person Enemy;//Textura para o inimigo
     static Person mainCharacter;//Textura para o protagonista
 
-    if (boolLoadedFase1 == 0) {
+    if (boolLoadedFase1 == 0) {// carrega as texturas
         textureBackground = LoadAnyTexture("assets/imagens/background_hellgate.jpg");
         textureGround     = LoadAnyTexture("assets/imagens/ground.jpg");
 
@@ -105,14 +105,6 @@ void InitFase_1(Screen* screenSelector){
         //Faz a verificação se o tempo do contador chegou em 20 e reincia todas as contagens p/ novas tentativas
         else if(tempoAtual - tempoInicial == 20){
             
-            
-            //Reset de variáveis
-            boolTempoInicial = 0;
-            contadorAtaques = 0;
-            tempoInicial = 0;
-            tempoAtual = 0;
-            boolLoadedFase1 = 0;
-
             //Descarregamento da textura do chão e do background
             UnloadTexture(textureBackground);
             UnloadTexture(textureGround);
@@ -122,6 +114,13 @@ void InitFase_1(Screen* screenSelector){
             UnloadTexture(Enemy.fight);
             UnloadTexture(mainCharacter.stand);
             UnloadTexture(mainCharacter.fight);
+
+            //Reset de variáveis
+            boolTempoInicial = 0;
+            contadorAtaques = 0;
+            tempoInicial = 0;
+            tempoAtual = 0;
+            boolLoadedFase1 = 0;
 
             //Selecão da tela de game over
             *screenSelector = GAME_OVER;
