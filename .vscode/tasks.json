@@ -8,18 +8,15 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "-gdwarf-4",
-                
-                // --- MUDANÇA 1: Usar workspaceFolder ---
-                // Isso pega TODOS os .c da pasta raiz do projeto
+            
+                //Pega os .c da pasta source do projeto
                 "${workspaceFolder}/source/*.c",
                 "-I",
                 "include",
-                
-                // --- MUDANÇA 2: Usar workspaceFolder ---
                 "-o",
                 "${workspaceFolder}\\build\\hth.exe",
                 
-                // --- Argumentos do Raylib (Idênticos) ---
+                //Argumentos do Raylib
                 "-I",
                 "C:/raylib/raylib/src", 
                 "-L",
@@ -31,7 +28,6 @@
                 // -----------------------------
             ],
             "options": {
-                // --- MUDANÇA 3: Usar workspaceFolder ---
                 "cwd": "${workspaceFolder}",
                 "env": {
                     "PATH": "C:\\raylib\\w64devkit\\bin;${env:PATH}"
