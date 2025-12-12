@@ -25,7 +25,6 @@
                 "-lopengl32", 
                 "-lgdi32",    
                 "-lwinmm"
-                // -----------------------------
             ],
             "options": {
                 "cwd": "${workspaceFolder}",
